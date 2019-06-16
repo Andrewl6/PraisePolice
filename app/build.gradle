@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.google.gms.google-services'
+
+android {
+  compileSdkVersion 27
+  defaultConfig {
+
+    // TODO change the uniqueAppId variable
+
+    applicationId "com.freedomhi.praisepolice"
+    minSdkVersion 23
+    targetSdkVersion 27
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+  lintOptions {
+      abortOnError false
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation 'com.android.support:appcompat-v7:27.1.1'
+  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+  implementation 'com.android.support:recyclerview-v7:27.1.1'
+  implementation 'com.android.support:design:27.1.1'
+  implementation 'com.google.firebase:firebase-core:16.0.9'
+  implementation 'com.google.firebase:firebase-ml-vision:20.0.0'
+  implementation 'com.google.code.gson:gson:2.8.5'
+  implementation 'com.karumi:dexter:5.0.0'
+}
